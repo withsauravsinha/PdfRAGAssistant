@@ -1,0 +1,44 @@
+[
+  {
+    "ContainingType": "PdfKnowledgeAssistant.Controllers.PdfController",
+    "Method": "Ask",
+    "RelativePath": "api/Pdf/ask",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "question",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PdfKnowledgeAssistant.Controllers.PdfController",
+    "Method": "ProcessPdf",
+    "RelativePath": "api/Pdf/process",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PdfKnowledgeAssistant.Controllers.PdfController",
+    "Method": "Search",
+    "RelativePath": "api/Pdf/search",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "question",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

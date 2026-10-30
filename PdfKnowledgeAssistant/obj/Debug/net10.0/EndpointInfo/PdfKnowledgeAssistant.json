@@ -1,0 +1,73 @@
+{
+  "openapi": "3.1.1",
+  "info": {
+    "title": "PdfKnowledgeAssistant | v1",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5065"
+    }
+  ],
+  "paths": {
+    "/api/Pdf/ask": {
+      "get": {
+        "tags": [
+          "Pdf"
+        ],
+        "parameters": [
+          {
+            "name": "question",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Pdf/process": {
+      "get": {
+        "tags": [
+          "Pdf"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Pdf/search": {
+      "get": {
+        "tags": [
+          "Pdf"
+        ],
+        "parameters": [
+          {
+            "name": "question",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Pdf"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "H1oNl+Tx/YI=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\HP\\source\\repos\\PdfKnowledgeAssistant\\PdfKnowledgeAssistant\\PdfKnowledgeAssistant.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.13\\microsoft.aspnetcore.openapi.10.0.13.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.openapi\\2.12.2\\microsoft.openapi.2.12.2.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\npgsql\\10.0.3\\npgsql.10.0.3.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\pdfpig\\0.1.16\\pdfpig.0.1.16.nupkg.sha512"
+  ],
+  "logs": []
+}
