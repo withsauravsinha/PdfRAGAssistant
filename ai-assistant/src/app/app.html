@@ -1,0 +1,102 @@
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+
+    <h2>✦ AI Assistant</h2>
+
+    <button class="new-chat" (click)="newChat()">
+      + New Chat
+    </button>
+
+    <div class="history">
+      <p>YOUR ASSISTANT</p>
+      <span>HR Leave Manager</span>
+      <span>Document Knowledge</span>
+    </div>
+
+    <div class="profile">
+      <div class="avatar">E</div>
+      <span>Employee</span>
+    </div>
+
+  </aside>
+
+  <!-- Chat area -->
+  <main class="chat-area">
+
+    <header class="chat-header">
+      <h3>HR & Knowledge Assistant</h3>
+    </header>
+
+    <section class="messages">
+
+      <div class="welcome" *ngIf="messages().length === 0">
+        <h1>How can I help you today?</h1>
+        <p>Ask about leave policies, leave balances or documents.</p>
+
+        <div class="suggestions">
+          <button (click)="question='How many leaves do I have remaining?'">
+            Leave balance
+          </button>
+
+          <button (click)="question='Explain the HR leave policy'">
+            HR leave policy
+          </button>
+
+          <button (click)="question='Where was Superman born?'">
+            Ask documents
+          </button>
+        </div>
+      </div>
+
+      <div
+        *ngFor="let message of messages()"
+        class="message"
+        [ngClass]="message.role">
+
+        <div class="message-avatar">
+          {{ message.role === 'user' ? 'Y' : '✦' }}
+        </div>
+
+        <div class="message-content">
+          {{ message.content }}
+        </div>
+
+      </div>
+
+      <div class="message assistant" *ngIf="isLoading()">
+        <div class="message-avatar">✦</div>
+        <div class="message-content">Thinking...</div>
+      </div>
+
+    </section>
+
+    <!-- Input -->
+    <footer class="input-area">
+
+      <div class="input-box">
+
+        <textarea
+          [(ngModel)]="question"
+          placeholder="Message AI Assistant..."
+          rows="1"
+          (keydown.enter)="sendMessage(); $event.preventDefault()">
+        </textarea>
+
+        <button
+          class="send-button"
+          (click)="sendMessage()"
+          [disabled]="!question.trim() || isLoading()">
+          ↑
+        </button>
+
+      </div>
+
+      <p>AI can make mistakes. Verify important information.</p>
+
+    </footer>
+
+  </main>
+
+</div>

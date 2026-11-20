@@ -1,4 +1,5 @@
-﻿using Npgsql;
+﻿using Dapper;
+using Npgsql;
 using System.Globalization;
 
 namespace PdfKnowledgeAssistant.Services;
@@ -53,5 +54,22 @@ public class VectorStorageService
         }
 
         await transaction.CommitAsync();
+    }
+
+    public async Task<bool> IsDocumentProcessedAsync(string fileName)
+    {
+        const string query = @"
+        SELECT EXISTS (
+            SELECT 1
+            FROM document_chunks
+            WHERE document_name = @FileName
+        );";
+
+        using var connection = new NpgsqlConnection(_connectionString);
+
+        return await connection.ExecuteScalarAsync<bool>(
+            query,
+            new { FileName = fileName }
+        );
     }
 }

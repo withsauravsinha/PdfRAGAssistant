@@ -13,8 +13,7 @@ public class EmbeddingService
         _httpClient = httpClient;
     }
 
-    public async Task<float[][]> GenerateEmbeddingsAsync(
-        List<string> chunks)
+    public async Task<float[][]> GenerateEmbeddingsAsync(List<string> chunks)
     {
         var request = new
         {
